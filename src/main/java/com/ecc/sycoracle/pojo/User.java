@@ -20,6 +20,9 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
+
+
+
     @TableId(value = "id",type = IdType.AUTO)
     private Integer id;
     private String userName;

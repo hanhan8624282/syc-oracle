@@ -12,8 +12,6 @@ public class SunChao {
         System.out.println("123");
         System.out.println("这是aaaaaaaaaaa分支");
         System.out.println("这是aaaaaaaaaaa分支1111");
-        System.out.println("这是aaaaaaaaaa分支");
-        System.out.println("这是aaaaaaaaaaa分支1111");
 
 
     }

@@ -1,0 +1,44 @@
+server:
+  port: 8888
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 10
+      min-idle: 10
+      max-active: 50
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: select 1 from dual
+      test-while-idle: true
+      test-on-return: false
+      test-on-borrow: false
+      max-pool-prepared-statement-per-connection-size: 50
+      pool-prepared-statements: true
+      filters: stat
+      connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
+    prefix: classpath:/static/
+  aop:
+    auto: true
+  devtools:
+    restart:
+      enabled: false
+  mvc:
+    static-path-pattern: /static/**
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    jdbc-type-for-null: 'null'
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:/mapper/**/*.xml
+
